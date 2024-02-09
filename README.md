@@ -1,1 +1,7 @@
-# mine_sweeper_rust
+# mRust programming practice.
+
+## CLI game
+
+```bash
+cargo run
+```
