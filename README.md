@@ -1,4 +1,4 @@
-# m# mine_sweeper_rs
+# mine_sweeper_rs
 
 ## About this code
 
