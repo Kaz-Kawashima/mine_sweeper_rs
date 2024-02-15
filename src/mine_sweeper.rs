@@ -1,6 +1,6 @@
 use std::{io, process::exit};
 use rand::Rng;
-use crate::panel::{new_blank_panel, new_boarder_panel, new_bomb_panel, OpenResult, OpenState, Panel};
+use crate::panel::{new_blank_panel, new_border_panel, new_bomb_panel, OpenResult, OpenState, Panel};
 
 pub struct GameBoard
 {    
@@ -18,9 +18,9 @@ impl GameBoard {
         self.field_size_x = x + 2;
         self.field_size_y = y + 2;
         // Fill Panel
-        for row in 0 .. self.field_size_y {
+        for _row in 0 .. self.field_size_y {
             let mut panel_row:Vec<Box<dyn Panel>> = Vec::new();
-            for col in 0 .. self.field_size_x {
+            for _col in 0 .. self.field_size_x {
                 let b = Box::new(new_blank_panel());
                 panel_row.push(b);
             }
@@ -28,12 +28,12 @@ impl GameBoard {
         }
         // Fill Boarder
         for row in 0 .. self.field_size_y{
-            self.panel_mat[row][0] = Box::new(new_boarder_panel());
-            self.panel_mat[row][self.field_size_x - 1] = Box::new(new_boarder_panel());
+            self.panel_mat[row][0] = Box::new(new_border_panel());
+            self.panel_mat[row][self.field_size_x - 1] = Box::new(new_border_panel());
         }
         for col in 0 .. self.field_size_x{
-            self.panel_mat[0][col] = Box::new(new_boarder_panel());
-            self.panel_mat[self.field_size_y - 1][col] = Box::new(new_boarder_panel());
+            self.panel_mat[0][col] = Box::new(new_border_panel());
+            self.panel_mat[self.field_size_y - 1][col] = Box::new(new_border_panel());
         }
         // SetBomb
         self.set_bomb(num_bomb);

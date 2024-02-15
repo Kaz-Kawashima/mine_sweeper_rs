@@ -158,10 +158,10 @@ pub fn new_blank_panel() -> BlankPanel{
     }
 }
 
-pub struct BoarderPanel {
+pub struct BorderPanel {
 }
 
-impl Panel for BoarderPanel {
+impl Panel for BorderPanel {
     // Common Accessor
     fn get_open_state(&self) -> &OpenState {
         &OpenState::Open
@@ -183,6 +183,6 @@ impl Panel for BoarderPanel {
     }
 }
 
-pub fn new_boarder_panel() -> BoarderPanel{
-    BoarderPanel {}
+pub fn new_border_panel() -> BorderPanel{
+    BorderPanel {}
 }
