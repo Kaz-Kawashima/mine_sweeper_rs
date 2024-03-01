@@ -215,7 +215,7 @@ pub fn mine_sweeper_cui() {
             OpenResult::Bomb => {
                 gb.print();
                 gb.open_bombs();
-                println!("Game Ovaer!");
+                println!("Game Over!");
                 exit(0);
             }
             OpenResult::Safe => {
